@@ -1,0 +1,98 @@
+.page {
+  background-color: #000;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+
+.header {
+  width: 100%;
+  max-width: 880px;
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+
+.header__logo {
+}
+
+.header__line {
+}
+
+.main {
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 880px;
+  max-height: 120px;
+  padding-bottom: 50px;
+}
+
+.profile__image {
+  width: 100%;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 50%;
+}
+
+.profile__name {
+}
+
+.profile__profession {
+}
+
+.profile__edit-button {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.profile__add-button {
+  max-width: 150px;
+  max-height: 50px;
+}
+
+.elements {
+  display: grid;
+  grid-template-columns: repeat(3, 282px);
+  grid-template-rows: repeat(2, 361px);
+  grid-gap: 17px 20px;
+}
+
+.elements__card {
+  max-width: 282px;
+  max-height: 361px;
+  background-color: #fff;
+}
+
+.elements__image {
+  width: 100%;
+  max-width: 282px;
+  max-height: 282px;
+}
+
+.elements__card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.elements__name {
+  color: #000;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.elements__like-button {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.footer {
+  color: #545454;
+  padding: 67px 0 60px;
+}

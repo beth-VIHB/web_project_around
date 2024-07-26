@@ -24,8 +24,7 @@
 
 .profile {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 880px;
   max-height: 120px;
@@ -39,10 +38,23 @@
   border-radius: 50%;
 }
 
-.profile__name {
+.profile__info {
+  width: 100%;
+  max-width: 415px;
+  display: flex;
+  align-items: baseline;
+  padding-left: 30px;
+}
+.profile__data-span {
+  font-size: 42px;
+  font-weight: 500;
+  max-width: 373px;
 }
 
-.profile__profession {
+.profile__data {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .profile__edit-button {
@@ -53,6 +65,7 @@
 .profile__add-button {
   max-width: 150px;
   max-height: 50px;
+  padding-left: 165px;
 }
 
 .elements {

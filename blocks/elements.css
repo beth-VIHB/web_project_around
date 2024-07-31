@@ -41,8 +41,16 @@
 }
 
 .elements__like-button {
+  width: 100%;
   max-width: 20px;
-  max-height: 20px;
+  height: 20px;
+  background-color: #fff;
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+}
+
+.elements__like-button-image {
 }
 
 @media screen and (max-width: 1024px) {
@@ -56,6 +64,5 @@
   .elements {
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
   }
 }

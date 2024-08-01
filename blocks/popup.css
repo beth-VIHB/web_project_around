@@ -73,9 +73,6 @@
   border: none;
 }
 
-.popup__input-container_filled {
-}
-
 .popup__input-name {
   color: #c4c4c4;
   font-family: Inter;
@@ -104,24 +101,20 @@
   font-size: 18px;
   font-weight: 400;
   border: 1px solid #c4c4c4;
+  background-color: #000;
   color: #c4c4c4;
-  background-color: #fff;
   border-radius: 2px;
-  pointer-events: none;
   padding: 0;
 }
 
 .popup__button-active {
-  background-color: #c4c4c4;
-  color: #000;
+  background-color: #fff;
+  color: #c4c4c4;
   cursor: pointer;
 }
 
 .popup__button-active:hover {
   opacity: 80%;
-}
-
-@media screen and (max-width: 1024px) {
 }
 
 @media screen and (max-width: 650px) {

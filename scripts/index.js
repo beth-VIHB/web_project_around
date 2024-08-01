@@ -1,44 +1,42 @@
-let edit = document.querySelector(".profile__edit-button");
-console.log(edit);
+let editButton = document.querySelector(".profile__edit-button");
 
-let openPopup = document.querySelector(".popup");
-console.log(openPopup);
+let profilePopup = document.querySelector(".popup");
 
-let closePopup = document.querySelector(".popup__closed-icon");
-console.log(closePopup);
+let closeProfilePopup = document.querySelector(".popup__closed-icon");
 
-let handleProfile = document.querySelector(".popup__profile-form");
-console.log(handleProfile);
+let profileForm = document.querySelector(".popup__profile-form");
 
 let inputName = document.querySelector(".popup__input-name");
-console.log(inputName);
 
 let inputAbout = document.querySelector(".popup__input-about");
-console.log(inputAbout);
 
-let submit = document.querySelector(".popup__button");
-console.log(submit);
+let activeButton = document.querySelector(".popup__button");
+
+let profileName = document.querySelector(".profile__name");
+
+let profileAbout = document.querySelector(".profile__profession");
 
 function showPopup() {
-  openPopup.classList.add("popup__opened");
+  profilePopup.classList.add("popup__opened");
+  inputName.value = profileName.textContent;
+  inputAbout.value = profileAbout.textContent;
 }
 
 function hidePopup() {
-  openPopup.classList.remove("popup__opened");
+  profilePopup.classList.remove("popup__opened");
 }
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  let inputName = document.querySelector(".popup__input-name");
-  console.log(inputName);
-
-  let inputAbout = document.querySelector(".popup__input-about");
-  console.log(inputAbout);
+  profileName.textContent = inputName.value;
+  profileAbout.textContent = inputAbout.value;
+  hidePopup();
 }
-/*function submitInfo() {
-  submit.classList.add("popup__button-active");
-}*/
 
-edit.addEventListener("click", showPopup);
-closePopup.addEventListener("click", hidePopup);
-/*submit.addEventListener("click", submitInfo);*/
+function submitInfo() {
+  activeButton.classList.add("popup__button");
+}
+
+editButton.addEventListener("click", showPopup);
+closeProfilePopup.addEventListener("click", hidePopup);
+profileForm.addEventListener("submit", handleProfileFormSubmit);

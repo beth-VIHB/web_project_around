@@ -15,7 +15,12 @@
       <header class="header">
         <div>
           <img
-            src="./images/header.jpg"
+            src="./images/header__logo.png"
+            alt="Around the U.S."
+            class="header__logo"
+          />
+          <img
+            src="./images/Line.png"
             alt="Around the U.S."
             class="header__logo"
           />
@@ -155,7 +160,45 @@
       <footer class="footer">
         <p class="footer__signature">© 2024. Around the U.S.</p>
       </footer>
+      <div class="popup">
+        <div class="popup_overlay"></div>
+        <div class="popup__container">
+          <img
+            src="./images/close.png"
+            alt="Close icon"
+            class="popup__closed-icon"
+          />
+          <form class="popup__profile-form" name="profile__form">
+            <div class="popup__inputs">
+              <h2 class="popup__heading">Editar Perfil</h2>
+              <fieldset
+                class="popup__input-container popup__input-container_filled"
+              >
+                <input
+                  type="text"
+                  class="popup__input-name"
+                  id="name"
+                  name="name"
+                  value=""
+                  placeholder="Nombre"
+                  required
+                />
+                <input
+                  type="text"
+                  class="popup__input-about"
+                  id="profile__info"
+                  name="profile__info"
+                  value=""
+                  placeholder="Acerca de mí"
+                  required
+                />
+                <button type="submit" class="popup__button">Guardar</button>
+              </fieldset>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    <script src="pages/index.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

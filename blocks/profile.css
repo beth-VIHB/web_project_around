@@ -45,6 +45,11 @@
   margin-left: 18px;
   background-color: #000;
   box-sizing: content-box;
+  cursor: pointer;
+}
+
+.profile__edit-button:hover {
+  opacity: 60%;
 }
 
 .profile__edit-button-image {
@@ -59,6 +64,11 @@
   background-color: #000;
   box-sizing: border-box;
   border: 1px solid white;
+  cursor: pointer;
+}
+
+.profile__add-button:hover {
+  opacity: 60%;
 }
 
 .profile__add-button-image {

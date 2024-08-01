@@ -1,0 +1,165 @@
+.popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none;
+}
+
+.popup__opened {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup_overlay {
+  background-color: #000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.popup__container {
+  margin-top: 0;
+  padding-top: 0;
+  z-index: 2;
+}
+
+.popup__profile-form {
+  background-color: white;
+  border: none;
+  padding: 0;
+  text-align: left;
+  color: black;
+  max-width: 430px;
+  height: 330px;
+  margin-top: 0;
+  border-radius: 10px;
+}
+
+.popup__closed-icon {
+  width: 40px;
+  height: 40px;
+  margin-left: 422px;
+}
+
+.popup__closed-icon:hover {
+  opacity: 60%;
+}
+
+.popup__inputs {
+  max-width: 358px;
+  margin: auto;
+}
+
+.popup__heading {
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  padding-top: 34px;
+  padding-bottom: 54px;
+  margin: 0;
+}
+
+.popup__input-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.popup__input-container_filled {
+}
+
+.popup__input-name {
+  color: #c4c4c4;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 0 5px;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  margin-bottom: 30px;
+}
+
+.popup__input-about {
+  color: #c4c4c4;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 0 5px;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  margin-bottom: 48px;
+}
+.popup__button {
+  max-width: 358px;
+  height: 50px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  border: 1px solid #c4c4c4;
+  color: #c4c4c4;
+  background-color: #fff;
+  border-radius: 2px;
+  pointer-events: none;
+  padding: 0;
+}
+
+.popup__button-active {
+  background-color: #c4c4c4;
+  color: #000;
+  cursor: pointer;
+}
+
+.popup__button-active:hover {
+  opacity: 80%;
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 650px) {
+  .popup__profile-form {
+    max-width: 282px;
+    height: 322px;
+  }
+
+  .popup__closed-icon {
+    width: 26px;
+    height: 26px;
+    margin-left: 246px;
+    margin-bottom: 14px;
+  }
+
+  .popup__closed-icon:hover {
+    opacity: 60%;
+  }
+
+  .popup__closed-profile {
+  }
+
+  .popup__inputs {
+    max-width: 238px;
+  }
+
+  .popup__heading {
+    font-size: 18px;
+    padding-top: 25px;
+    padding-bottom: 76px;
+  }
+
+  .popup__input-about {
+    margin-bottom: 46px;
+  }
+  .popup__button {
+    max-width: 238px;
+    height: 46px;
+    font-size: 14px;
+  }
+}

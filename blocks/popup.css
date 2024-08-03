@@ -74,7 +74,6 @@
 }
 
 .popup__input-name {
-  color: #c4c4c4;
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -85,7 +84,6 @@
 }
 
 .popup__input-about {
-  color: #c4c4c4;
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;

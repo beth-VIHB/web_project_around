@@ -28,6 +28,10 @@
   cursor: pointer;
 }
 
+.elements__trash-button:hover {
+  opacity: 40%;
+}
+
 .elements__image {
   width: 100%;
   height: 100%;

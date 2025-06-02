@@ -29,6 +29,7 @@ function hidePopup() {
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = inputName.value;
+  stat;
   profileAbout.textContent = inputAbout.value;
   hidePopup();
 }

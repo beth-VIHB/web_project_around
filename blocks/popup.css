@@ -116,6 +116,12 @@
   opacity: 80%;
 }
 
+.popup__two {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none;
+}
 .popup__new-place-form {
   background-color: white;
   border: none;

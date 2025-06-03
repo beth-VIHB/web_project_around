@@ -16,6 +16,14 @@ const profileName = document.querySelector(".profile__name");
 
 const profileAbout = document.querySelector(".profile__profession");
 
+const addButton = document.querySelector(".profile__add-button");
+
+const placeForm = document.querySelector(".popup__new-place-form");
+
+const inputPlace = document.querySelector(".popup__input-place");
+
+const inputUrl = document.querySelector(".popup__input-url");
+
 const initialCards = [
   {
     name: "Breckenridge",
@@ -42,6 +50,17 @@ const initialCards = [
     link: "./images/Wabasha, MN, United States.jpg",
   },
 ];
+
+function createCard(url, title) {
+  const card = templateCard.content
+    .querySelector(".elements__card")
+    .cloneNode(true);
+  const cardImage = card.querySelector(".elements__image");
+  const cardTitle = card.querySelector(".elements__name");
+  cardImage.url = link;
+  cardTitle.textContent = title;
+  sectionCards.append(card);
+}
 
 initialCards.forEach(function (element) {});
 
@@ -70,3 +89,9 @@ function submitInfo() {
 editButton.addEventListener("click", showPopup);
 closeProfilePopup.addEventListener("click", hidePopup);
 profileForm.addEventListener("submit", handleProfileFormSubmit);
+
+function showPopup() {
+  profilePopup.classList.add("popup__opened");
+  inputName.value = profileName.textContent;
+  inputAbout.value = profileAbout.textContent;
+}

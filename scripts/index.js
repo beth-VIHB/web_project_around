@@ -19,29 +19,31 @@ const profileAbout = document.querySelector(".profile__profession");
 const initialCards = [
   {
     name: "Breckenridge",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+    link: "./images/Breckenridge, CO, United States.jpg",
   },
   {
     name: "Cooper Landing",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+    link: "./images/Cooper Landing, AK, United States.jpg",
   },
   {
     name: "Kapa'a",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+    link: "./images/Kapaʻa, HI, United States.jpg",
   },
   {
     name: "Condado Nye",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+    link: "./images/Nye County, NV, United States.jpg",
   },
   {
     name: "Orlando",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+    link: "./images/Orlando, FL, United States.jpg",
   },
   {
     name: "Wabasha",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+    link: "./images/Wabasha, MN, United States.jpg",
   },
 ];
+
+initialCards.forEach(function (element) {});
 
 function showPopup() {
   profilePopup.classList.add("popup__opened");

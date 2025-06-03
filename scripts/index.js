@@ -18,36 +18,42 @@ const profileAbout = document.querySelector(".profile__profession");
 
 const addButton = document.querySelector(".profile__add-button");
 
+const cardsPopup = document.querySelector(".popup__two");
+
 const placeForm = document.querySelector(".popup__new-place-form");
 
 const inputPlace = document.querySelector(".popup__input-place");
 
 const inputUrl = document.querySelector(".popup__input-url");
 
+const templateCard = document.querySelector(".template-card");
+
+//const initialCards = document.querySelector(".elements");//
+
 const initialCards = [
   {
     name: "Breckenridge",
-    link: "./images/Breckenridge, CO, United States.jpg",
+    link: "./images/BreckenridgeUnitedStates.jpg",
   },
   {
     name: "Cooper Landing",
-    link: "./images/Cooper Landing, AK, United States.jpg",
+    link: "./images/CooperLandingUnitedStates.jpg",
   },
   {
     name: "Kapa'a",
-    link: "./images/Kapaʻa, HI, United States.jpg",
+    link: "./images/KapaaUnitedStates.jpg",
   },
   {
     name: "Condado Nye",
-    link: "./images/Nye County, NV, United States.jpg",
+    link: "./images/NyeCountyUnitedStates.jpg",
   },
   {
     name: "Orlando",
-    link: "./images/Orlando, FL, United States.jpg",
+    link: "./images/OrlandoUnitedStates.jpg",
   },
   {
     name: "Wabasha",
-    link: "./images/Wabasha, MN, United States.jpg",
+    link: "./images/WabashaUnitedStates.jpg",
   },
 ];
 
@@ -57,12 +63,14 @@ function createCard(url, title) {
     .cloneNode(true);
   const cardImage = card.querySelector(".elements__image");
   const cardTitle = card.querySelector(".elements__name");
-  cardImage.url = link;
+  cardImage.src = url;
   cardTitle.textContent = title;
   sectionCards.append(card);
 }
 
-initialCards.forEach(function (element) {});
+initialCards.forEach(function (element) {
+  createCard(element.link, element.name);
+});
 
 function showPopup() {
   profilePopup.classList.add("popup__opened");
@@ -91,7 +99,7 @@ closeProfilePopup.addEventListener("click", hidePopup);
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 function showPopup() {
-  profilePopup.classList.add("popup__opened");
+  cardsPopup.classList.add("popup__opened");
   inputName.value = profileName.textContent;
   inputAbout.value = profileAbout.textContent;
 }

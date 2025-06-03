@@ -122,6 +122,7 @@
   position: fixed;
   display: none;
 }
+
 .popup__new-place-form {
   background-color: white;
   border: none;

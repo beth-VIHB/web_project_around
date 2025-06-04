@@ -18,17 +18,9 @@ const profileAbout = document.querySelector(".profile__profession");
 
 const addButton = document.querySelector(".profile__add-button");
 
-const cardsPopup = document.querySelector(".popup__two");
+const templateCard = document.querySelector(".template__card");
 
-const placeForm = document.querySelector(".popup__new-place-form");
-
-const inputPlace = document.querySelector(".popup__input-place");
-
-const inputUrl = document.querySelector(".popup__input-url");
-
-const templateCard = document.querySelector(".template-card");
-
-//const initialCards = document.querySelector(".elements");//
+const sectionCards = document.querySelector(".elements");
 
 const initialCards = [
   {
@@ -57,20 +49,21 @@ const initialCards = [
   },
 ];
 
-function createCard(url, title) {
-  const card = templateCard.content
+initialCards.forEach(function (item) {
+  createCard(item.link, item.name);
+});
+
+function createCard(link, title) {
+  const elements = templateCard.content
     .querySelector(".elements__card")
     .cloneNode(true);
-  const cardImage = card.querySelector(".elements__image");
-  const cardTitle = card.querySelector(".elements__name");
-  cardImage.src = url;
-  cardTitle.textContent = title;
-  sectionCards.append(card);
+  const elementTitle = elements.querySelector(".elements__name");
+  elementTitle.textContent = title;
+  const elementImage = elements.querySelector(".elements__image");
+  elementImage.src = link;
+  sectionCards.append(elements);
+  console.log(elements);
 }
-
-initialCards.forEach(function (element) {
-  createCard(element.link, element.name);
-});
 
 function showPopup() {
   profilePopup.classList.add("popup__opened");
@@ -85,7 +78,6 @@ function hidePopup() {
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = inputName.value;
-  stat;
   profileAbout.textContent = inputAbout.value;
   hidePopup();
 }
@@ -97,9 +89,3 @@ function submitInfo() {
 editButton.addEventListener("click", showPopup);
 closeProfilePopup.addEventListener("click", hidePopup);
 profileForm.addEventListener("submit", handleProfileFormSubmit);
-
-function showPopup() {
-  cardsPopup.classList.add("popup__opened");
-  inputName.value = profileName.textContent;
-  inputAbout.value = profileAbout.textContent;
-}

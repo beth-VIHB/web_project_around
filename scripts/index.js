@@ -57,12 +57,16 @@ function createCard(link, title) {
   const elements = templateCard.content
     .querySelector(".elements__card")
     .cloneNode(true);
-  const elementTitle = elements.querySelector(".elements__name");
-  elementTitle.textContent = title;
   const elementImage = elements.querySelector(".elements__image");
   elementImage.src = link;
+  const elementTitle = elements.querySelector(".elements__name");
+  elementTitle.textContent = title;
+  const trashIcon = elements.querySelector(".elements__trash-button");
+  trashIcon.addEventListener("click", function () {
+    elements.remove();
+  });
+
   sectionCards.append(elements);
-  console.log(elements);
 }
 
 function showPopup() {

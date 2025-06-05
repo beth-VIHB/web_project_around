@@ -64,14 +64,15 @@
 
 .elements__like-button {
   width: 100%;
-  max-width: 20px;
-  height: 20px;
+  max-width: 21px;
+  height: 19px;
   background-color: #fff;
   box-sizing: border-box;
   border: none;
   padding: 0;
   margin-right: 18px;
   cursor: pointer;
+  background-image: url(/images/like.jpg);
 }
 
 .elements__like-button:hover {
@@ -81,11 +82,7 @@
 }
 
 .elements__like-button_active {
-  opacity: 1;
-  background: url(../images/active__like.png) center no-repeat;
-  transform: scale(1.1);
-}
-.elements__like-button-image {
+  background-image: url(/images/active__like.png);
 }
 
 @media screen and (max-width: 1024px) {

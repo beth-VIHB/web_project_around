@@ -1,10 +1,10 @@
 const editButton = document.querySelector(".profile__edit-button");
 
-const profilePopup = document.querySelector(".popup");
+const profilePopup = document.querySelector("#popup-profile");
 
-const closeProfilePopup = document.querySelector(".popup__closed-icon");
+const closeProfilePopup = document.querySelector("#popup-profile-close-button");
 
-const profileForm = document.querySelector(".popup__profile-form");
+const profileForm = document.querySelector(".popup__form");
 
 const inputName = document.querySelector(".popup__input-name");
 
@@ -20,7 +20,7 @@ const addButton = document.querySelector(".profile__add-button");
 
 const addingPopup = document.querySelector("#popup-add");
 
-const closeAddPopup = document.querySelector("#popup__closed-icon");
+const closeAddPopup = document.querySelector("#popup-add-close-button");
 
 const NewPlaceForm = document.querySelector(".popup__new-place-form");
 
@@ -107,12 +107,23 @@ editButton.addEventListener("click", showPopup);
 closeProfilePopup.addEventListener("click", hidePopup);
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
-function showAddingPopup() {
+function showPlacePopup() {
   addingPopup.classList.add("popup__opened");
   inputLink.value = elementImage.textContent;
   inputTitle.value = elementTitle.textContent;
 }
 
-function hidePopup() {
+function hidePlacePopup() {
   addingPopup.classList.remove("popup__opened");
 }
+
+function handlePlaceFormSubmit(evt) {
+  evt.preventDefault();
+  elementImage.textContent = inputLink.value;
+  elementTitle.textContent = inputTitle.value;
+  hidePlacePopup();
+}
+
+addButton.addEventListener("click", showPlacePopup);
+closeAddPopup.addEventListener("click", hidePopup);
+NewPlaceForm.addEventListener("submit", handleProfileFormSubmit);

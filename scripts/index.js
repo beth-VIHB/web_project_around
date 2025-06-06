@@ -6,9 +6,9 @@ const closeProfilePopup = document.querySelector("#popup-profile-close-button");
 
 const profileForm = document.querySelector(".popup__form");
 
-const inputName = document.querySelector(".popup__input-name");
+const inputName = document.querySelector("#name");
 
-const inputAbout = document.querySelector(".popup__input-about");
+const inputAbout = document.querySelector("#profile__info");
 
 const activeButton = document.querySelector(".popup__button");
 
@@ -22,11 +22,13 @@ const addingPopup = document.querySelector("#popup-add");
 
 const closeAddPopup = document.querySelector("#popup-add-close-button");
 
-const NewPlaceForm = document.querySelector(".popup__new-place-form");
+const newPlaceForm = document.querySelector(".popup__new-place-form");
 
-const inputTitle = document.querySelector(".popup__input-title");
+const inputTitle = document.querySelector("#title");
 
-const inputLink = document.querySelector(".popup__input-link");
+const inputLink = document.querySelector("#link");
+
+const imagePopup = document.querySelector("#popup-image");
 
 const templateCard = document.querySelector(".template__card");
 
@@ -124,6 +126,10 @@ function handlePlaceFormSubmit(evt) {
   hidePlacePopup();
 }
 
+function submitCard() {
+  activeButton.classList.add("popup__button");
+}
+
 addButton.addEventListener("click", showPlacePopup);
-closeAddPopup.addEventListener("click", hidePopup);
-NewPlaceForm.addEventListener("submit", handleProfileFormSubmit);
+closeAddPopup.addEventListener("click", hidePlacePopup);
+newPlaceForm.addEventListener("submit", handlePlaceFormSubmit);

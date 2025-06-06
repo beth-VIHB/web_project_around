@@ -73,7 +73,7 @@
   border: none;
 }
 
-.popup__input-name {
+.popup-first__input {
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -83,7 +83,7 @@
   margin-bottom: 30px;
 }
 
-.popup__input-about {
+.popup-second__input {
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;

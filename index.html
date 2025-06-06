@@ -86,7 +86,7 @@
               <fieldset class="popup__input-container">
                 <input
                   type="text"
-                  class="popup__input-name"
+                  class="popup-first__input"
                   id="name"
                   name="name"
                   value=""
@@ -95,14 +95,20 @@
                 />
                 <input
                   type="text"
-                  class="popup__input-about"
+                  class="popup-second__input"
                   id="profile__info"
                   name="profile__info"
                   value=""
                   placeholder="Acerca de mí"
                   required
                 />
-                <button type="submit" class="popup__button">Guardar</button>
+                <button
+                  type="submit"
+                  class="popup__button"
+                  id="popup-profile-save-button"
+                >
+                  Guardar
+                </button>
               </fieldset>
             </div>
           </form>
@@ -120,13 +126,10 @@
           <form class="popup__form" name="new-place__form">
             <div class="popup__inputs" id="popup__inputs">
               <h2 class="popup__heading">Nuevo lugar</h2>
-              <fieldset
-                class="popup__input-container"
-                id="popup__input-container"
-              >
+              <fieldset class="popup__input-container">
                 <input
                   type="text"
-                  class="popup__input-title"
+                  class="popup-first__input"
                   id="title"
                   name="title"
                   value=""
@@ -135,19 +138,34 @@
                 />
                 <input
                   type="text"
-                  class="popup__input-link"
-                  id="link__info"
+                  class="popup-second__input"
+                  id="link"
                   name="link__info"
                   value=""
                   placeholder="Enlace a la imagen"
                   required
                 />
-                <button type="submit" class="popup__button" id="popup__button">
-                  Guardar
+                <button
+                  type="submit"
+                  class="popup__button"
+                  id="popup-add-save-button"
+                >
+                  Crear
                 </button>
               </fieldset>
             </div>
           </form>
+        </div>
+      </div>
+      <div class="popup" id="popup-image">
+        <div class="popup_overlay" id="popup_overlay"></div>
+        <div class="popup__container" id="popup__container">
+          <img
+            src="./images/close.png"
+            alt="Close icon"
+            class="popup__closed-icon"
+            id="popup-add-close-button"
+          />
         </div>
       </div>
     </div>

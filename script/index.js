@@ -30,8 +30,6 @@ const inputTitle = document.querySelector("#title");
 
 const inputLink = document.querySelector("#link");
 
-const activeCreateButton = document.querySelector("#popup-add-save-button");
-
 const imagePopup = document.querySelector("#popup-image");
 
 const closeImage = document.querySelector("#popup-image-close-button");
@@ -94,6 +92,20 @@ function createCard(link, title) {
   sectionCards.append(elements);
 }
 
+function showPlacePopup() {
+  addingPopup.classList.add("popup__opened");
+}
+
+function hidePlacePopup() {
+  addingPopup.classList.remove("popup__opened");
+}
+
+function handlePlaceFormSubmit(evt) {
+  evt.preventDefault();
+  createCard(inputLink.value, inputTitle.value);
+  hidePlacePopup();
+}
+
 function showPopup() {
   profilePopup.classList.add("popup__opened");
   inputName.value = profileName.textContent;
@@ -115,24 +127,6 @@ function submitInfo() {
   activeProfileButton.classList.add("#popup-profile-save-button");
 }
 
-function showPlacePopup() {
-  addingPopup.classList.add("popup__opened");
-}
-
-function hidePlacePopup() {
-  addingPopup.classList.remove("popup__opened");
-}
-
-function handlePlaceFormSubmit(evt) {
-  evt.preventDefault();
-  createCard(inputLink.value, inputTitle.value);
-  hidePlacePopup();
-}
-
-function submitCard() {
-  activeCreateButton.classList.add("#popup-add-save-button");
-}
-
 function showImagePopup(link, title) {
   imagePopup.classList.add("popup__opened");
   const popupImageElement = document.querySelector(".popup__image-open");
@@ -145,12 +139,12 @@ function hideImagePopup() {
   imagePopup.classList.remove("popup__opened");
 }
 
-editButton.addEventListener("click", showPopup);
-closeProfilePopup.addEventListener("click", hidePopup);
-profileForm.addEventListener("submit", handleProfileFormSubmit);
-
 addButton.addEventListener("click", showPlacePopup);
 closeAddPopup.addEventListener("click", hidePlacePopup);
 addPlaceForm.addEventListener("submit", handlePlaceFormSubmit);
+
+editButton.addEventListener("click", showPopup);
+closeProfilePopup.addEventListener("click", hidePopup);
+profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 closeImage.addEventListener("click", hideImagePopup);

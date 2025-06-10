@@ -18,3 +18,13 @@ Alguna de las mejoras que se podrían aplicar serían
 
 1. TCrear carretes para que varias fotos de un mismo lugar.
 2. Poder agregar videos.
+
+Imagenes detalladas de las características del proyecto:
+
+1. .\images\ActiveLike.png
+2. .\images\Delete.png
+3. .\images\EditProfile.png
+4. .\images\NewProfile.png
+5. .\images\AddingPopup.png
+6. .\images\CreateNewCards.png
+7. .\images\OpenImage.png

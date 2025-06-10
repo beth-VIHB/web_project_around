@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.popup_overlay {
+.popup__overlay {
   background-color: #000;
   opacity: 0.5;
   position: absolute;
@@ -73,7 +73,7 @@
   border: none;
 }
 
-.popup-first__input {
+.popup__input {
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -81,16 +81,6 @@
   border: none;
   border-bottom: 1px solid #c4c4c4;
   margin-bottom: 30px;
-}
-
-.popup-second__input {
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 0 0 5px;
-  border: none;
-  border-bottom: 1px solid #c4c4c4;
-  margin-bottom: 48px;
 }
 
 .popup__button {

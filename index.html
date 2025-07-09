@@ -92,7 +92,15 @@
                   value=""
                   placeholder="Nombre"
                   required
+                  minlength="2"
+                  maxlength="40"
                 />
+                <div class="popup__validation-message">
+                  <span
+                    class="popup__validation-message-input"
+                    id="name__validation-message"
+                  ></span>
+                </div>
                 <input
                   type="text"
                   class="popup__input"
@@ -101,11 +109,20 @@
                   value=""
                   placeholder="Acerca de mí"
                   required
+                  minlength="2"
+                  maxlength="200"
                 />
+                <div class="popup__validation-message">
+                  <span
+                    class="popup__validation-message-input"
+                    id="profile__validation-message"
+                  ></span>
+                </div>
                 <button
                   type="submit"
                   class="popup__button"
                   id="popup-profile-save-button"
+                  disabled
                 >
                   Guardar
                 </button>
@@ -135,9 +152,17 @@
                   value=""
                   placeholder="Título"
                   required
+                  minlength="2"
+                  maxlength="30"
                 />
+                <div class="popup__validation-message">
+                  <span
+                    class="popup__validation-message-input"
+                    id="place__validation-message"
+                  ></span>
+                </div>
                 <input
-                  type="text"
+                  type="url"
                   class="popup__input"
                   id="link"
                   name="link__info"
@@ -145,10 +170,17 @@
                   placeholder="Enlace a la imagen"
                   required
                 />
+                <div class="popup__validation-message">
+                  <span
+                    class="popup__validation-message-input"
+                    id="url__validation-message"
+                  ></span>
+                </div>
                 <button
                   type="submit"
                   class="popup__button"
                   id="popup-add-save-button"
+                  disabled
                 >
                   Crear
                 </button>
@@ -174,5 +206,6 @@
       </div>
     </div>
     <script src="./script/index.js"></script>
+    <script src="./script/validate.js"></script>
   </body>
 </html>

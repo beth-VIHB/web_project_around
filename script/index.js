@@ -14,6 +14,8 @@ const activeProfileButton = document.querySelector(
   "#popup-profile-save-button"
 );
 
+const activeNewPlaceButton = document.querySelector("#popup-add-save-button");
+
 const profileName = document.querySelector(".profile__name");
 
 const profileAbout = document.querySelector(".profile__profession");
@@ -37,6 +39,16 @@ const closeImage = document.querySelector("#popup-image-close-button");
 const templateCard = document.querySelector(".template__card");
 
 const sectionCards = document.querySelector(".elements");
+
+const nameValidation = document.querySelector("#name__validation-message");
+
+const profileValidation = document.querySelector(
+  "#profile__validation-message"
+);
+
+const placeValidation = document.querySelector("#place__validation-message");
+
+const urlValidation = document.querySelector("#url__validation-message");
 
 const initialCards = [
   {
@@ -89,7 +101,7 @@ function createCard(link, title) {
   trashIcon.addEventListener("click", function () {
     elements.remove();
   });
-  sectionCards.append(elements);
+  sectionCards.prepend(elements);
 }
 
 function showPlacePopup() {
@@ -148,3 +160,35 @@ closeProfilePopup.addEventListener("click", hidePopup);
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 closeImage.addEventListener("click", hideImagePopup);
+
+inputName.addEventListener("input", function () {
+  if (inputName.validity.valid) {
+    nameValidation.textContent = "";
+  } else {
+    nameValidation.textContent = inputName.validationMessage;
+  }
+});
+
+inputAbout.addEventListener("input", function () {
+  if (inputAbout.validity.valid) {
+    profileValidation.textContent = "";
+  } else {
+    profileValidation.textContent = inputAbout.validationMessage;
+  }
+});
+
+inputTitle.addEventListener("input", function () {
+  if (inputTitle.validity.valid) {
+    placeValidation.textContent = "";
+  } else {
+    placeValidation.textContent = inputTitle.validationMessage;
+  }
+});
+
+inputLink.addEventListener("input", function () {
+  if (inputLink.validity.valid) {
+    urlValidation.textContent = "";
+  } else {
+    urlValidation.textContent = inputLink.validationMessage;
+  }
+});

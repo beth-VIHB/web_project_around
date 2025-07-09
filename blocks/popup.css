@@ -83,6 +83,20 @@
   margin-bottom: 30px;
 }
 
+.popup__validation-message {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.popup__validation-message-input {
+  color: #ff0000;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
 .popup__button {
   max-width: 358px;
   height: 50px;
@@ -106,6 +120,12 @@
   opacity: 80%;
 }
 
+.popup__button:disabled {
+  background-color: #fff;
+  color: #cccccc;
+  border: #cccccc 1px solid;
+}
+
 .popup__places-heading {
   color: #000;
   font-family: Inter;
@@ -127,6 +147,28 @@
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0%;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 2px;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #cccccc;
+}
+
+input:valid {
+  border-color: #cccccc;
+}
+
+input:invalid {
+  border-color: #ff0000;
 }
 
 @media screen and (max-width: 650px) {

@@ -135,8 +135,14 @@ function handleProfileFormSubmit(evt) {
   hidePopup();
 }
 
-function submitInfo() {
-  activeProfileButton.classList.add("#popup-profile-save-button");
+function toggleProfileButton(isDisabled) {
+  if (!isDisabled) {
+    activeProfileButton.removeAttribute("disabled");
+    activeProfileButton.classList.remove("popup-profile-save-button");
+  } else {
+    activeProfileButton.setAttribute("disabled", "disabled");
+    activeProfileButton.classList.add("popup-profile-save-button");
+  }
 }
 
 function showImagePopup(link, title) {
@@ -164,16 +170,20 @@ closeImage.addEventListener("click", hideImagePopup);
 inputName.addEventListener("input", function () {
   if (inputName.validity.valid) {
     nameValidation.textContent = "";
+    toggleProfileButton(false);
   } else {
     nameValidation.textContent = inputName.validationMessage;
+    toggleProfileButton(true);
   }
 });
 
 inputAbout.addEventListener("input", function () {
   if (inputAbout.validity.valid) {
     profileValidation.textContent = "";
+    toggleProfileButton(false);
   } else {
     profileValidation.textContent = inputAbout.validationMessage;
+    toggleProfileButton(true);
   }
 });
 

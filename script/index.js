@@ -50,6 +50,9 @@ const placeValidation = document.querySelector("#place__validation-message");
 
 const urlValidation = document.querySelector("#url__validation-message");
 
+const popupOverlay = document.querySelectorAll(".popup__overlay");
+console.log(popupOverlay);
+
 const initialCards = [
   {
     name: "Breckenridge",
@@ -116,6 +119,16 @@ function handlePlaceFormSubmit(evt) {
   evt.preventDefault();
   createCard(inputLink.value, inputTitle.value);
   hidePlacePopup();
+}
+
+function togglePlaceButton(isDisabled) {
+  if (!isDisabled) {
+    activeNewPlaceButton.removeAttribute("disabled");
+    activeNewPlaceButton.classList.remove("popup-add-save-button");
+  } else {
+    activeNewPlaceButton.setAttribute("disabled", "disabled");
+    activeNewPlaceButton.classList.add("popup-add-save-button");
+  }
 }
 
 function showPopup() {
@@ -190,15 +203,44 @@ inputAbout.addEventListener("input", function () {
 inputTitle.addEventListener("input", function () {
   if (inputTitle.validity.valid) {
     placeValidation.textContent = "";
+    togglePlaceButton(false);
   } else {
     placeValidation.textContent = inputTitle.validationMessage;
+    togglePlaceButton(true);
   }
 });
 
 inputLink.addEventListener("input", function () {
   if (inputLink.validity.valid) {
     urlValidation.textContent = "";
+    togglePlaceButton(false);
   } else {
     urlValidation.textContent = inputLink.validationMessage;
+    togglePlaceButton(true);
+  }
+});
+
+popupOverlay.forEach(function (overlay) {
+  overlay.addEventListener("click", function (evt) {
+    console.log("Overlay clicked, closing popups");
+    if (evt.target === overlay) {
+      hidePopup();
+      hidePlacePopup();
+      hideImagePopup();
+    }
+  });
+});
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    if (profilePopup.classList.contains("popup__opened")) {
+      hidePopup();
+    }
+    if (addingPopup.classList.contains("popup__opened")) {
+      hidePlacePopup();
+    }
+    if (imagePopup.classList.contains("popup__opened")) {
+      hideImagePopup();
+    }
   }
 });

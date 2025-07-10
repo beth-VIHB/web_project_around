@@ -67,3 +67,24 @@ inputLink.addEventListener("input", function () {
     togglePlaceButton(true);
   }
 });
+
+setEventListeners = (formElement) => {
+  const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
+  const buttonElement = formElement.querySelector(".popup__button");
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener("input", () => {
+      isValid(formElement, inputElement);
+      toggleButtonState(inputList, buttonElement);
+    });
+  });
+};
+
+enableValidation = () => {
+  const formElement = document.querySelector(".popup__form");
+
+  formElement.addEventListener("submit", (evt) => {
+    evt.preventDefault();
+  });
+};
+
+enableValidation();

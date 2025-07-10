@@ -110,14 +110,9 @@
   padding: 0;
 }
 
-.popup__button-active {
-  background-color: #fff;
-  color: #c4c4c4;
-  cursor: pointer;
-}
-
-.popup__button-active:hover {
+.popup__button:hover {
   opacity: 80%;
+  cursor: pointer;
 }
 
 .popup__button:disabled {

@@ -1,3 +1,5 @@
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
 const editButton = document.querySelector(".profile__edit-button");
 
 const profilePopup = document.querySelector("#popup-profile");
@@ -70,7 +72,9 @@ const initialCards = [
 ];
 
 initialCards.forEach(function (item) {
-  createCard(item.link, item.name);
+  const intanceCard = new Card(item.link, item.name);
+  sectionCards.prepend(intanceCard.getCard());
+  console.log(intanceCard.htmlCard);
 });
 
 function createCard(link, title) {

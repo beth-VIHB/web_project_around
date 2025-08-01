@@ -10,8 +10,20 @@ export default class Card {
       .cloneNode(true);
   }
 
+  showImagePopup() {
+    showImage(this.link, this.title);
+  }
+
+  hideImagePopup() {
+    hideImage();
+  }
+
   toogleLike() {
     this.likeButton.classList.toggle("elements__like-button_active");
+  }
+
+  removeCard() {
+    this.htmlCard.remove();
   }
 
   setEventListeners() {
@@ -20,7 +32,7 @@ export default class Card {
     });
 
     this.trashIcon.addEventListener("click", () => {
-      this.htmlCard.remove();
+      this.removeCard();
     });
   }
 

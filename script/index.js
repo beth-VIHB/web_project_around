@@ -74,10 +74,9 @@ const initialCards = [
 initialCards.forEach(function (item) {
   const intanceCard = new Card(item.link, item.name);
   sectionCards.prepend(intanceCard.getCard());
-  console.log(intanceCard.htmlCard);
 });
 
-function createCard(link, title) {
+/*function createCard(link, title) {
   const elements = templateCard.content
     .querySelector(".elements__card")
     .cloneNode(true);
@@ -98,7 +97,7 @@ function createCard(link, title) {
     elements.remove();
   });
   sectionCards.prepend(elements);
-}
+}*/
 
 function showPlacePopup() {
   addingPopup.classList.add("popup__opened");

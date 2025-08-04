@@ -10,13 +10,14 @@ export default class Card {
       .cloneNode(true);
   }
 
-  showImagePopup() {
-    showImage(this.link, this.title);
-  }
-
-  hideImagePopup() {
-    hideImage();
-  }
+  /*ImagePopup() {
+    this.elementImage = elements.querySelector(".elements__image");
+    this.elementImage.src = link;
+    this.elementImage.alt = `Imagen de ${title}`;
+    this.elementImage.addEventListener("click", function () {
+      showImagePopup(this.link, this.title);
+    });
+  }*/
 
   toogleLike() {
     this.likeButton.classList.toggle("elements__like-button_active");

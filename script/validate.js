@@ -1,4 +1,4 @@
-const nameValidation = document.querySelector("#name__validation-message");
+/*const nameValidation = document.querySelector("#name__validation-message");
 
 const profileValidation = document.querySelector(
   "#profile__validation-message"
@@ -6,84 +6,47 @@ const profileValidation = document.querySelector(
 
 const placeValidation = document.querySelector("#place__validation-message");
 
-const urlValidation = document.querySelector("#url__validation-message");
+const urlValidation = document.querySelector("#url__validation-message");*/
 
-function togglePlaceButton(isDisabled) {
-  if (!isDisabled) {
-    activeNewPlaceButton.removeAttribute("disabled");
-    activeNewPlaceButton.classList.remove("popup-add-save-button");
+function validateInput(inputElement) {
+  const messageElement = document.querySelector(`#${inputElement.id}-message`);
+  if (inputElement.validity.valid) {
+    messageElement.textContent = "";
   } else {
-    activeNewPlaceButton.setAttribute("disabled", "disabled");
-    activeNewPlaceButton.classList.add("popup-add-save-button");
+    messageElement.textContent = inputElement.validationMessage;
   }
 }
 
-function toggleProfileButton(isDisabled) {
-  if (!isDisabled) {
-    activeProfileButton.removeAttribute("disabled");
-    activeProfileButton.classList.remove("popup-profile-save-button");
-  } else {
-    activeProfileButton.setAttribute("disabled", "disabled");
-    activeProfileButton.classList.add("popup-profile-save-button");
-  }
-}
-
-inputName.addEventListener("input", function () {
-  if (inputName.validity.valid) {
-    nameValidation.textContent = "";
-    toggleProfileButton(false);
-  } else {
-    nameValidation.textContent = inputName.validationMessage;
-    toggleProfileButton(true);
-  }
-});
-
-inputAbout.addEventListener("input", function () {
-  if (inputAbout.validity.valid) {
-    profileValidation.textContent = "";
-    toggleProfileButton(false);
-  } else {
-    profileValidation.textContent = inputAbout.validationMessage;
-    toggleProfileButton(true);
-  }
-});
-
-inputTitle.addEventListener("input", function () {
-  if (inputTitle.validity.valid) {
-    placeValidation.textContent = "";
-    togglePlaceButton(false);
-  } else {
-    placeValidation.textContent = inputTitle.validationMessage;
-    togglePlaceButton(true);
-  }
-});
-
-inputLink.addEventListener("input", function () {
-  if (inputLink.validity.valid) {
-    urlValidation.textContent = "";
-    togglePlaceButton(false);
-  } else {
-    urlValidation.textContent = inputLink.validationMessage;
-    togglePlaceButton(true);
-  }
-});
-
-setEventListeners = (formElement) => {
+const setEventListeners = (formElement) => {
   const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
   const buttonElement = formElement.querySelector(".popup__button");
+  toggleButtonState(inputList, buttonElement);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
-      isValid(formElement, inputElement);
+      validateInput(inputElement);
       toggleButtonState(inputList, buttonElement);
     });
   });
 };
 
-enableValidation = () => {
-  const formElement = document.querySelector(".popup__form");
+function toggleButtonState(inputList, buttonElement) {
+  if (!inputList.some((input) => !input.validity.valid)) {
+    buttonElement.removeAttribute("disabled");
+    buttonElement.classList.remove("popup-add-save-button");
+  } else {
+    buttonElement.setAttribute("disabled", "disabled");
+    buttonElement.classList.add("popup-add-save-button");
+  }
+}
 
-  formElement.addEventListener("submit", (evt) => {
-    evt.preventDefault();
+const enableValidation = (config) => {
+  const formList = document.querySelectorAll(config.formSelector);
+
+  formList.forEach(function (formElement) {
+    setEventListeners(formElement);
+    formElement.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
   });
 };
 

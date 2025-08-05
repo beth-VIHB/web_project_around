@@ -5,40 +5,8 @@ export const profileName = document.querySelector(".profile__name");
 export const inputName = document.querySelector("#name");
 export const inputAbout = document.querySelector("#profile__info");
 export const profileAbout = document.querySelector(".profile__profession");
-export const config = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-};
-export const initialCards = [
-  {
-    name: "Breckenridge",
-    link: "./images/BreckenridgeUnitedStates.jpg",
-  },
-  {
-    name: "Cooper Landing",
-    link: "./images/CooperLandingUnitedStates.jpg",
-  },
-  {
-    name: "Kapa'a",
-    link: "./images/KapaaUnitedStates.jpg",
-  },
-  {
-    name: "Condado Nye",
-    link: "./images/NyeCountyUnitedStates.jpg",
-  },
-  {
-    name: "Orlando",
-    link: "./images/OrlandoUnitedStates.jpg",
-  },
-  {
-    name: "Wabasha",
-    link: "./images/WabashaUnitedStates.jpg",
-  },
-];
+export const inputTitle = document.querySelector("#title");
+export const inputLink = document.querySelector("#link");
 
 export function showPlacePopup() {
   addingPopup.classList.add("popup__opened");

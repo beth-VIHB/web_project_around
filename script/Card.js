@@ -1,25 +1,21 @@
+import { showImagePopup } from "./utils.js";
 export default class Card {
   constructor(link, title) {
     this.link = link;
     this.title = title;
   }
-  getTemplate() {
+  _getTemplate() {
     const CardTemplate = document.querySelector(".template__card");
     return CardTemplate.content
       .querySelector(".elements__card")
       .cloneNode(true);
   }
 
-  /*ImagePopup() {
-    this.elementImage = elements.querySelector(".elements__image");
-    this.elementImage.src = link;
-    this.elementImage.alt = `Imagen de ${title}`;
-    this.elementImage.addEventListener("click", function () {
-      showImagePopup(this.link, this.title);
-    });
-  }*/
+  ImagePopup() {
+    showImagePopup(this.link, this.title);
+  }
 
-  toogleLike() {
+  _toogleLike() {
     this.likeButton.classList.toggle("elements__like-button_active");
   }
 
@@ -27,18 +23,21 @@ export default class Card {
     this.htmlCard.remove();
   }
 
-  setEventListeners() {
+  _setEventListeners() {
     this.likeButton.addEventListener("click", () => {
-      this.toogleLike();
+      this._toogleLike();
     });
 
     this.trashIcon.addEventListener("click", () => {
       this.removeCard();
     });
+    this.elementImage.addEventListener("click", () => {
+      this.ImagePopup();
+    });
   }
 
-  setProperties() {
-    this.htmlCard = this.getTemplate();
+  _setProperties() {
+    this.htmlCard = this._getTemplate();
     this.elementImage = this.htmlCard.querySelector(".elements__image");
     this.elementTitle = this.htmlCard.querySelector(".elements__name");
     this.likeButton = this.htmlCard.querySelector(".elements__like-button");
@@ -49,8 +48,8 @@ export default class Card {
   }
 
   getCard() {
-    this.setProperties();
-    this.setEventListeners();
+    this._setProperties();
+    this._setEventListeners();
     return this.htmlCard;
   }
 }

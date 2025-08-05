@@ -1,7 +1,6 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import {
-  initialCards,
   addingPopup,
   profilePopup,
   imagePopup,
@@ -9,13 +8,14 @@ import {
   hidePlacePopup,
   showPopup,
   hidePopup,
-  showImagePopup,
   hideImagePopup,
-  config,
   profileName,
   inputName,
   inputAbout,
+  inputLink,
+  inputTitle,
   profileAbout,
+  showImagePopup,
 } from "./utils.js";
 const editButton = document.querySelector(".profile__edit-button");
 
@@ -29,15 +29,47 @@ const closeAddPopup = document.querySelector("#popup-add-close-button");
 
 const addPlaceForm = document.querySelector(".popup__new-place-form");
 
-const inputTitle = document.querySelector("#title");
-
-const inputLink = document.querySelector("#link");
-
 const closeImage = document.querySelector("#popup-image-close-button");
 
 const sectionCards = document.querySelector(".elements");
 
 const popupOverlay = document.querySelectorAll(".popup__overlay");
+
+const config = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
+
+const initialCards = [
+  {
+    name: "Breckenridge",
+    link: "./images/BreckenridgeUnitedStates.jpg",
+  },
+  {
+    name: "Cooper Landing",
+    link: "./images/CooperLandingUnitedStates.jpg",
+  },
+  {
+    name: "Kapa'a",
+    link: "./images/KapaaUnitedStates.jpg",
+  },
+  {
+    name: "Condado Nye",
+    link: "./images/NyeCountyUnitedStates.jpg",
+  },
+  {
+    name: "Orlando",
+    link: "./images/OrlandoUnitedStates.jpg",
+  },
+  {
+    name: "Wabasha",
+    link: "./images/WabashaUnitedStates.jpg",
+  },
+];
 
 const ValidationProfile = new FormValidator(profileForm, config);
 ValidationProfile.enableValidation();
